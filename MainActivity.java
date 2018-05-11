@@ -2,8 +2,10 @@ package dea1993.morsetorch;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
+//import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -109,140 +111,140 @@ public class MainActivity  extends AppCompatActivity {
                         switch (carattere[i]) {
                             case 'a':
                             case 'A':
-                                for (int j : a) charToFlash(a[j]);
+                                for (int j : a) charToFlash(j);
                                 break;
                             case 'b':
                             case 'B':
-                                for (int j : b) charToFlash(b[j]);
+                                for (int j : b) charToFlash(j);
                                 break;
                             case 'c':
                             case 'C':
-                                for (int j : c) charToFlash(c[j]);
+                                for (int j : c) charToFlash(j);
                                 break;
                             case 'd':
                             case 'D':
-                                for (int j : d) charToFlash(d[j]);
+                                for (int j : d) charToFlash(j);
                                 break;
                             case 'e':
                             case 'E':
-                                for (int j : e) charToFlash(e[j]);
+                                for (int j : e) charToFlash(j);
                                 break;
                             case 'f':
                             case 'F':
-                                for (int j : f) charToFlash(f[j]);
+                                for (int j : f) charToFlash(j);
                                 break;
                             case 'g':
                             case 'G':
-                                for (int j : g) charToFlash(g[j]);
+                                for (int j : g) charToFlash(j);
                                 break;
                             case 'h':
                             case 'H':
-                                for (int j : h) charToFlash(h[j]);
+                                for (int j : h) charToFlash(j);
                                 break;
                             case 'i':
                             case 'I':
-                                for (int j : iI) charToFlash(iI[j]);
+                                for (int j : iI) charToFlash(j);
                                 break;
                             case 'j':
                             case 'J':
-                                for (int j : jJ) charToFlash(jJ[j]);
+                                for (int j : jJ) charToFlash(j);
                                 break;
                             case 'k':
                             case 'K':
-                                for (int j : k) charToFlash(k[j]);
+                                for (int j : k) charToFlash(j);
                                 break;
                             case 'l':
                             case 'L':
-                                for (int j : l) charToFlash(l[j]);
+                                for (int j : l) charToFlash(j);
                                 break;
                             case 'm':
                             case 'M':
-                                for (int j : m) charToFlash(m[j]);
+                                for (int j : m) charToFlash(j);
                                 break;
                             case 'n':
                             case 'N':
-                                for (int j : n) charToFlash(n[j]);
+                                for (int j : n) charToFlash(j);
                                 break;
                             case 'o':
                             case 'O':
-                                for (int j : o) charToFlash(o[j]);
+                                for (int j : o) charToFlash(j);
                                 break;
                             case 'p':
                             case 'P':
-                                for (int j : p) charToFlash(p[j]);
+                                for (int j : p) charToFlash(j);
                                 break;
                             case 'q':
                             case 'Q':
-                                for (int j : q) charToFlash(q[j]);
+                                for (int j : q) charToFlash(j);
                                 break;
                             case 'r':
                             case 'R':
-                                for (int j : r) charToFlash(r[j]);
+                                for (int j : r) charToFlash(j);
                                 break;
                             case 's':
                             case 'S':
-                                for (int j : s) charToFlash(s[j]);
+                                for (int j : s) charToFlash(j);
                                 break;
                             case 't':
                             case 'T':
-                                for (int j : t) charToFlash(t[j]);
+                                for (int j : t) charToFlash(j);
                                 break;
                             case 'u':
                             case 'U':
-                                for (int j : u) charToFlash(u[j]);
+                                for (int j : u) charToFlash(j);
                                 break;
                             case 'v':
                             case 'V':
-                                for (int j : v) charToFlash(v[j]);
+                                for (int j : v) charToFlash(j);
                                 break;
                             case 'w':
                             case 'W':
-                                for (int j : w) charToFlash(w[j]);
+                                for (int j : w) charToFlash(j);
                                 break;
                             case 'x':
                             case 'X':
-                                for (int j : x) charToFlash(x[j]);
+                                for (int j : x) charToFlash(j);
                                 break;
                             case 'y':
                             case 'Y':
-                                for (int j : y) charToFlash(y[j]);
+                                for (int j : y) charToFlash(j);
                                 break;
                             case 'z':
                             case 'Z':
-                                for (int j : z) charToFlash(z[j]);
+                                for (int j : z) charToFlash(j);
                                 break;
                             case '1':
-                                for (int j : uno) charToFlash(uno[j]);
+                                for (int j : uno) charToFlash(j);
                                 break;
                             case '2':
-                                for (int j : due) charToFlash(due[j]);
+                                for (int j : due) charToFlash(j);
                                 break;
                             case '3':
-                                for (int j : tre) charToFlash(tre[j]);
+                                for (int j : tre) charToFlash(j);
                                 break;
                             case '4':
-                                for (int j : quattro) charToFlash(quattro[j]);
+                                for (int j : quattro) charToFlash(j);
                                 break;
                             case '5':
-                                for (int j : cinque) charToFlash(cinque[j]);
+                                for (int j : cinque) charToFlash(j);
                                 break;
                             case '6':
-                                for (int j : sei) charToFlash(sei[j]);
+                                for (int j : sei) charToFlash(j);
                                 break;
                             case '7':
-                                for (int j : sette) charToFlash(sette[j]);
+                                for (int j : sette) charToFlash(j);
                                 break;
                             case '8':
-                                for (int j : otto) charToFlash(otto[j]);
+                                for (int j : otto) charToFlash(j);
                                 break;
                             case '9':
-                                for (int j : nove) charToFlash(nove[j]);
+                                for (int j : nove) charToFlash(j);
                                 break;
                             case '0':
-                                for (int j : zero) charToFlash(zero[j]);
+                                for (int j : zero) charToFlash(j);
                                 break;
                             case ' ':
-                                Log.d("torch", "parola terminata");
+                                //Log.d("torch", "parola terminata");
                                 //flashlightOff();
                                 fineParola = true;
                                 //Thread.sleep(spazioParola-pausa);
@@ -253,7 +255,7 @@ public class MainActivity  extends AppCompatActivity {
                         } // end switch
                         // sleep only if isn't finished the word
                         if ((!fineParola) && (!nextIsSpace)) {
-                            Log.d("torch", "lettera terminata");
+                            //Log.d("torch", "lettera terminata");
                             // turn off flashlight for "spazioLettera" ms
                             flashlightOff();
                             Thread.sleep(PausaFineLettera);
@@ -274,8 +276,10 @@ public class MainActivity  extends AppCompatActivity {
 
     public void charToFlash(int simbolo) throws InterruptedException {
         if (simbolo == 0) {
+            System.out.println("punto");
             morseFlash(punto);
         } else if (simbolo == 1) {
+            System.out.println("linea");
             morseFlash(linea);
         } // end if
     } // end chatToFlash
@@ -292,8 +296,16 @@ public class MainActivity  extends AppCompatActivity {
     } // end morseFlash
 
     public void flashlightOn(){
-        Log.d("flashlightOn", "accendo");
-        // check that device has torch flashlight
+        //Log.d("flashlightOn", "accendo");
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                // change ImageView color to yellow
+                mColor.setBackgroundColor(Color.parseColor("#ffff00"));
+            } // end run
+        }); // end runOnUiThread
+
+        // check if device has torch flashlight
         if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH)) {
             // device has torch flashlight
             try {
@@ -309,8 +321,15 @@ public class MainActivity  extends AppCompatActivity {
     } // end flashlightOn
 
     public void flashlightOff() {
-        Log.d("flashlightOff", "spengo");
-        // check that device has torch flashlight
+        //Log.d("flashlightOff", "spengo");
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                // change ImageView color to yellow
+                mColor.setBackgroundColor(Color.parseColor("#000000"));
+            } // end run
+        }); // end runOnUiThread
+        // check if device has torch flashlight
         if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH)) {
             // device has torch flashlight
             try {
