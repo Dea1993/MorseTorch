@@ -3,17 +3,16 @@ package dea1993.morsetorch;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
-//import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-//import android.widget.Toast;
-//import java.security.Policy;
+import android.widget.TextView;
 
 public class MainActivity  extends AppCompatActivity {
     @Override
@@ -26,6 +25,7 @@ public class MainActivity  extends AppCompatActivity {
 
     ImageView mColor;
     EditText mInputString;
+    TextView mMorseCodeOutput;
 
     boolean fineParola = false;
     boolean nextIsSpace = false;
@@ -84,9 +84,12 @@ public class MainActivity  extends AppCompatActivity {
     public void init() {
         mInputString = findViewById(R.id.etString);
         mColor = findViewById(R.id.ivColor);
+        mMorseCodeOutput = findViewById(R.id.tvMorseCode);
     }
 
     public void torch(View view) {
+        // clear output TextView
+        mMorseCodeOutput.setText("");
         final String testo = mInputString.getText().toString();
         Log.d("torch", testo);
         // convert string to char array
@@ -257,9 +260,11 @@ public class MainActivity  extends AppCompatActivity {
                         if ((!fineParola) && (!nextIsSpace)) {
                             //Log.d("torch", "lettera terminata");
                             // turn off flashlight for "spazioLettera" ms
+                            mMorseCodeOutput.append(" ");
                             flashlightOff();
                             Thread.sleep(PausaFineLettera);
                         } else if (fineParola) { // if word is finished, wait 7*dots
+                            mMorseCodeOutput.append(" / ");
                             flashlightOff();
                             Thread.sleep(PausaFineParola);
                             fineParola = false;
@@ -277,9 +282,11 @@ public class MainActivity  extends AppCompatActivity {
     public void charToFlash(int simbolo) throws InterruptedException {
         if (simbolo == 0) {
             System.out.println("punto");
+            mMorseCodeOutput.append(".");
             morseFlash(punto);
         } else if (simbolo == 1) {
             System.out.println("linea");
+            mMorseCodeOutput.append("-");
             morseFlash(linea);
         } // end if
     } // end chatToFlash
@@ -301,7 +308,8 @@ public class MainActivity  extends AppCompatActivity {
             @Override
             public void run() {
                 // change ImageView color to yellow
-                mColor.setBackgroundColor(Color.parseColor("#ffff00"));
+                //mColor.setBackgroundColor(Color.parseColor("#ffff00"));
+                mColor.setColorFilter(Color.YELLOW, PorterDuff.Mode.MULTIPLY);
             } // end run
         }); // end runOnUiThread
 
@@ -326,7 +334,8 @@ public class MainActivity  extends AppCompatActivity {
             @Override
             public void run() {
                 // change ImageView color to yellow
-                mColor.setBackgroundColor(Color.parseColor("#000000"));
+                //mColor.setBackgroundColor(Color.parseColor("#ffffff"));
+                mColor.setColorFilter(Color.WHITE, PorterDuff.Mode.MULTIPLY);
             } // end run
         }); // end runOnUiThread
         // check if device has torch flashlight
