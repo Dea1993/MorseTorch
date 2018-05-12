@@ -260,11 +260,11 @@ public class MainActivity  extends AppCompatActivity {
                         if ((!fineParola) && (!nextIsSpace)) {
                             //Log.d("torch", "lettera terminata");
                             // turn off flashlight for "spazioLettera" ms
-                            mMorseCodeOutput.append(" ");
+                            traduzione(" ");
                             flashlightOff();
                             Thread.sleep(PausaFineLettera);
                         } else if (fineParola) { // if word is finished, wait 7*dots
-                            mMorseCodeOutput.append(" / ");
+                            traduzione(" / ");
                             flashlightOff();
                             Thread.sleep(PausaFineParola);
                             fineParola = false;
@@ -282,11 +282,11 @@ public class MainActivity  extends AppCompatActivity {
     public void charToFlash(int simbolo) throws InterruptedException {
         if (simbolo == 0) {
             System.out.println("punto");
-            mMorseCodeOutput.append(".");
+            traduzione(".");
             morseFlash(punto);
         } else if (simbolo == 1) {
             System.out.println("linea");
-            mMorseCodeOutput.append("-");
+            traduzione("-");
             morseFlash(linea);
         } // end if
     } // end chatToFlash
@@ -302,10 +302,18 @@ public class MainActivity  extends AppCompatActivity {
         Thread.sleep(pausa);
     } // end morseFlash
 
+    // method to show morse code in TextView
+    public void traduzione(final String simbolo) {
+        runOnUiThread(new Runnable() {
+            public void run() {
+                mMorseCodeOutput.append(simbolo);
+            } // end run
+        }); // end runOnUiThread
+    } // end traduzione
+
     public void flashlightOn(){
         //Log.d("flashlightOn", "accendo");
         runOnUiThread(new Runnable() {
-            @Override
             public void run() {
                 // change ImageView color to yellow
                 //mColor.setBackgroundColor(Color.parseColor("#ffff00"));
@@ -331,9 +339,8 @@ public class MainActivity  extends AppCompatActivity {
     public void flashlightOff() {
         //Log.d("flashlightOff", "spengo");
         runOnUiThread(new Runnable() {
-            @Override
             public void run() {
-                // change ImageView color to yellow
+                // change ImageView color to white
                 //mColor.setBackgroundColor(Color.parseColor("#ffffff"));
                 mColor.setColorFilter(Color.WHITE, PorterDuff.Mode.MULTIPLY);
             } // end run
