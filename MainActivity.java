@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity  extends AppCompatActivity {
     @Override
@@ -23,7 +24,7 @@ public class MainActivity  extends AppCompatActivity {
         init();
     }
 
-    ImageView mColor;
+    ImageView mColorSend;
     EditText mInputString;
     TextView mMorseCodeOutput;
 
@@ -79,11 +80,26 @@ public class MainActivity  extends AppCompatActivity {
     int sette[] = {1,1,0,0,0};
     int otto[] = {1,1,1,0,0};
     int nove [] = {1,1,1,1,0};
-    int zero []= {1,1,1,1,1};
+    int zero [] = {1,1,1,1,1};
+    // special chars
+    int pnt[] = {0,1,0,1,0,1};
+    int vir[] = {1,1,0,0,1,1};
+    int duePnt[] = {1,1,1,0,0,0};
+    int pntDom[] = {0,0,1,1,0,0};
+    int pntEsc[] = {1,0,1,0,1,1};
+    int uguale[] = {1,0,0,0,1};
+    int trattino[] = {1,0,0,0,0,1};
+    int apici[] = {0,1,0,0,1,0};
+    int apostrofo[] = {0,1,1,1,1,0};
+    int slash[] = {1,0,0,1,0};
+    int chiocciola[] = {0,1,1,0,1,0};
+    int apertaParTonda[] = {1,0,1,1,0};
+    int chiusaParTonda[] = {1,0,1,1,0,1};
+
 
     public void init() {
         mInputString = findViewById(R.id.etString);
-        mColor = findViewById(R.id.ivColor);
+        mColorSend = findViewById(R.id.ivSend);
         mMorseCodeOutput = findViewById(R.id.tvMorseCode);
     }
 
@@ -246,6 +262,45 @@ public class MainActivity  extends AppCompatActivity {
                             case '0':
                                 for (int j : zero) charToFlash(j);
                                 break;
+                            case '.':
+                                for (int j : pnt) charToFlash(j);
+                                break;
+                            case ',':
+                                for (int j : vir) charToFlash(j);
+                                break;
+                            case ':':
+                                for (int j : duePnt) charToFlash(j);
+                                break;
+                            case '?':
+                                for (int j : pntDom) charToFlash(j);
+                                break;
+                            case '=':
+                                for (int j : uguale) charToFlash(j);
+                                break;
+                            case '-':
+                                for (int j : trattino) charToFlash(j);
+                                break;
+                            case '(':
+                                for (int j : apertaParTonda) charToFlash(j);
+                                break;
+                            case ')':
+                                for (int j : chiusaParTonda) charToFlash(j);
+                                break;
+                            case '"':
+                                for (int j : apici) charToFlash(j);
+                                break;
+                            case '\'':
+                                for (int j : apostrofo) charToFlash(j);
+                                break;
+                            case '/':
+                                for (int j : slash) charToFlash(j);
+                                break;
+                            case '@':
+                                for (int j : chiocciola) charToFlash(j);
+                                break;
+                            case '!':
+                                for (int j : pntEsc) charToFlash(j);
+                                break;
                             case ' ':
                                 //Log.d("torch", "parola terminata");
                                 //flashlightOff();
@@ -253,8 +308,10 @@ public class MainActivity  extends AppCompatActivity {
                                 //Thread.sleep(spazioParola-pausa);
                                 break;
                             default:
-                                Log.d("torch", "Carattere non supportato");
+                                //Log.d("torch", "Carattere non supportato");
+                                traduzione(carattere[i]+"err");
                                 break;
+
                         } // end switch
                         // sleep only if isn't finished the word
                         if ((!fineParola) && (!nextIsSpace)) {
@@ -317,7 +374,7 @@ public class MainActivity  extends AppCompatActivity {
             public void run() {
                 // change ImageView color to yellow
                 //mColor.setBackgroundColor(Color.parseColor("#ffff00"));
-                mColor.setColorFilter(Color.YELLOW, PorterDuff.Mode.MULTIPLY);
+                mColorSend.setColorFilter(Color.YELLOW, PorterDuff.Mode.MULTIPLY);
             } // end run
         }); // end runOnUiThread
 
@@ -342,7 +399,7 @@ public class MainActivity  extends AppCompatActivity {
             public void run() {
                 // change ImageView color to white
                 //mColor.setBackgroundColor(Color.parseColor("#ffffff"));
-                mColor.setColorFilter(Color.WHITE, PorterDuff.Mode.MULTIPLY);
+                mColorSend.setColorFilter(Color.WHITE, PorterDuff.Mode.MULTIPLY);
             } // end run
         }); // end runOnUiThread
         // check if device has torch flashlight
