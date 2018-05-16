@@ -1,4 +1,7 @@
 # MorseTorch
+
+![Screenshot](Resources/icon.png)
+
 **Description**
 
 This app converts a text message to morse code, and will show you the translated message.
@@ -27,8 +30,8 @@ This app supports Android 6.0+ devices
 
 **Screenshots**
 
-![Screenshot](screenshots/empty.jpg)
+![Screenshot](Screenshots/empty.jpg)
 
-![Screenshot](screenshots/sos.jpg)
+![Screenshot](Screenshots/sos.jpg)
 
-![Screenshot](screenshots/HelloWorld.jpg)
+![Screenshot](Screenshots/HelloWorld.jpg)
