@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MorseTorch</string>
+    <string name="hint">Insert Digits or letters</string>
+    <string name="todo" translatable="false">TODO</string>
+</resources>
