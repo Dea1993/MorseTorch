@@ -35,8 +35,8 @@
 
     <TextView
         android:id="@+id/tvMorseCode"
-        android:layout_width="0dp"
-        android:layout_height="242dp"
+        android:layout_width="396dp"
+        android:layout_height="383dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -88,7 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="50dp" />
+        app:layout_constraintGuide_end="80dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline5"
